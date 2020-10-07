@@ -1,19 +1,11 @@
-def is_prime(given_int) 
-    sqrt_num = Math.sqrt(given_int)
-
-    if given_int <= 1
-        return 0
+def prime?(num)
+    if num <= 1
+      return false 
+    elsif num >= 2
+      (2..(num-1)).each do |n|
+        return false if num % n == 0
+      end
+      true
     end
-
-    (2..sqrt_num) .none? do |i|
-        if given_int % 1 == 0
-            puts "IS NOT PRIME: #{given_int}"
-            return false
-        else
-            puts "IS PRIME: #{given_int}"
-            return true 
-        end
-    end
-    given_int
-end
+  end
 
